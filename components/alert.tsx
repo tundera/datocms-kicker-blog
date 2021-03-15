@@ -1,7 +1,12 @@
+import { FC } from 'react'
 import Container from './container'
 import cn from 'classnames'
 
-export default function Alert({ preview }) {
+interface AlertProps {
+  preview: boolean
+}
+
+const Alert: FC<AlertProps> = ({ preview }) => {
   return (
     <div
       className={cn('border-b', {
@@ -39,3 +44,5 @@ export default function Alert({ preview }) {
     </div>
   )
 }
+
+export default Alert

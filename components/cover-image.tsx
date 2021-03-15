@@ -1,8 +1,15 @@
-import { Image } from 'react-datocms'
+import { FC } from 'react'
+import { Image, ResponsiveImageType } from 'react-datocms'
 import cn from 'classnames'
 import Link from 'next/link'
 
-export default function CoverImage({ title, responsiveImage, slug }) {
+interface CoverImageProps {
+  title: string
+  responsiveImage: ResponsiveImageType
+  slug?: string
+}
+
+const CoverImage: FC<CoverImageProps> = ({ title, responsiveImage, slug }) => {
   const image = (
     <Image
       data={{
@@ -26,3 +33,5 @@ export default function CoverImage({ title, responsiveImage, slug }) {
     </div>
   )
 }
+
+export default CoverImage
